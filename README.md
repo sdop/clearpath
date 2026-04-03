@@ -42,3 +42,7 @@ Then open **[http://localhost:5000](http://localhost:5000)** in your browser.
 | **2 & 3 — Re-engagement Engine** | Automated follow-up sequences by non-conversion reason; warm lead dashboard |
 | **4 — Hybrid Care Gateway** | Standardized virtual/telehealth offering across all 11 centers via Kipu Health |
 | **5 — BDO Referral Portal** | Zero-friction digital referral intake with magic-link tracking |
+
+## Case Study
+
+The full case study document is located in the [`/docs`](./docs) folder.
