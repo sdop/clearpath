@@ -6,6 +6,27 @@ An interactive prototype built for the Deerfield Director of Strategy & Product 
 
 ---
 
+## Getting Started
+
+To spin up the backend locally, run:
+
+```bash
+npm run setup
+```
+
+This single command will:
+1. Install all dependencies
+2. Create and migrate the database
+3. Build the production bundle
+
+Then start the server:
+
+```bash
+NODE_ENV=production node dist/index.cjs
+```
+
+The app will be available at `http://localhost:5000`.
+
 ## Running It Locally
 
 ### Step 1 — Install Node.js (one-time setup)
