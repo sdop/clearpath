@@ -99,27 +99,13 @@ export default function VirtualCare() {
             Standardized virtual + telehealth offering across all 11 centers — powered by Kipu Health
           </p>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          <button
-            data-testid="button-run-simulation"
-            onClick={runSimulation}
-            style={{
-              padding: "8px 16px", borderRadius: 7, border: "1px solid hsl(var(--border))",
-              background: "hsl(var(--card))", cursor: "pointer", fontSize: "0.8rem",
-              color: "hsl(var(--foreground))", fontWeight: 500,
-              display: "flex", alignItems: "center", gap: 6,
-            }}
-          >
-            <PlayIcon /> Run Patient Journey
-          </button>
-          <button
-            data-testid="button-enroll-patient"
-            onClick={() => setShowEnroll(true)}
-            className="btn-primary"
-          >
-            + Enroll Patient
-          </button>
-        </div>
+        <button
+          data-testid="button-enroll-patient"
+          onClick={() => setShowEnroll(true)}
+          className="btn-primary"
+        >
+          + Enroll Patient
+        </button>
       </div>
 
       {/* KPI Row */}
@@ -192,7 +178,19 @@ export default function VirtualCare() {
           {simulationStep === null ? (
             <div style={{ textAlign: "center", padding: "32px 0", color: "hsl(var(--muted-foreground))" }}>
               <div style={{ marginBottom: 12, opacity: 0.6 }}><PlayIcon /></div>
-              <div style={{ fontSize: "0.8rem" }}>Click "Run Patient Journey" to simulate</div>
+              <div style={{ fontSize: "0.8rem", marginBottom: 16 }}>Click to simulate a patient journey</div>
+              <button
+                data-testid="button-run-simulation"
+                onClick={runSimulation}
+                style={{
+                  padding: "10px 24px", borderRadius: 8, border: "none",
+                  background: "hsl(var(--primary))", color: "white", cursor: "pointer",
+                  fontSize: "0.85rem", fontWeight: 600,
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                }}
+              >
+                <PlayIcon /> Run Patient Journey
+              </button>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
