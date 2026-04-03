@@ -55,6 +55,30 @@ export default function Dashboard() {
         </p>
       </div>
 
+
+      {/* Module cards */}
+      <div style={{ marginBottom: 20, display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
+        {[
+          { path: "/insurance", label: "Module 1", name: "Insurance Verify", desc: "Real-time eligibility checks", color: "#0891b2" },
+          { path: "/reengagement", label: "Module 2 & 3", name: "Re-engagement", desc: "Automated lead follow-up", color: "#7c3aed" },
+          { path: "/virtual", label: "Module 4", name: "Hybrid Care", desc: "Virtual care gateway", color: "#047857" },
+          { path: "/referrals", label: "Module 5", name: "Referral Portal", desc: "BDO digital intake", color: "#b45309" },
+          { path: "/centers", label: "Network", name: "Center View", desc: "Bed availability & capacity", color: "#1e40af" },
+        ].map(m => (
+          <Link key={m.path} href={m.path}>
+            <a style={{ textDecoration: "none" }}>
+              <div style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 10, padding: "14px 16px", cursor: "pointer", transition: "all 150ms" }}
+                onMouseOver={e => { e.currentTarget.style.borderColor = m.color; e.currentTarget.style.boxShadow = `0 2px 12px ${m.color}22`; }}
+                onMouseOut={e => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}>
+                <div style={{ fontSize: "0.65rem", fontWeight: 600, color: m.color, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 4 }}>{m.label}</div>
+                <div style={{ fontWeight: 600, fontSize: "0.85rem", marginBottom: 2 }}>{m.name}</div>
+                <div style={{ fontSize: "0.75rem", color: "hsl(var(--muted-foreground))" }}>{m.desc}</div>
+              </div>
+            </a>
+          </Link>
+        ))}
+      </div>
+
       {/* KPI Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 32 }}>
         {kpis.map(kpi => (
@@ -146,28 +170,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Module cards */}
-      <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
-        {[
-          { path: "/insurance", label: "Module 1", name: "Insurance Verify", desc: "Real-time eligibility checks", color: "#0891b2" },
-          { path: "/reengagement", label: "Module 2 & 3", name: "Re-engagement", desc: "Automated lead follow-up", color: "#7c3aed" },
-          { path: "/virtual", label: "Module 4", name: "Hybrid Care", desc: "Virtual care gateway", color: "#047857" },
-          { path: "/referrals", label: "Module 5", name: "Referral Portal", desc: "BDO digital intake", color: "#b45309" },
-          { path: "/centers", label: "Network", name: "Center View", desc: "Bed availability & capacity", color: "#1e40af" },
-        ].map(m => (
-          <Link key={m.path} href={m.path}>
-            <a style={{ textDecoration: "none" }}>
-              <div style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 10, padding: "14px 16px", cursor: "pointer", transition: "all 150ms" }}
-                onMouseOver={e => { e.currentTarget.style.borderColor = m.color; e.currentTarget.style.boxShadow = `0 2px 12px ${m.color}22`; }}
-                onMouseOut={e => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}>
-                <div style={{ fontSize: "0.65rem", fontWeight: 600, color: m.color, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 4 }}>{m.label}</div>
-                <div style={{ fontWeight: 600, fontSize: "0.85rem", marginBottom: 2 }}>{m.name}</div>
-                <div style={{ fontSize: "0.75rem", color: "hsl(var(--muted-foreground))" }}>{m.desc}</div>
-              </div>
-            </a>
-          </Link>
-        ))}
-      </div>
     </div>
   );
 }
