@@ -10,7 +10,8 @@
     "start:local": "HOST=localhost node dist/index.cjs",
     "check": "tsc",
     "db:push": "drizzle-kit push",
-    "setup": "npm install && npx drizzle-kit push && npm run build"
+    "setup": "npm install && npx drizzle-kit push && npm run build",
+    "go": "npm install && npx drizzle-kit push && npm run build && NODE_ENV=production node dist/index.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
