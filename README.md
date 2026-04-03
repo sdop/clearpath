@@ -6,13 +6,7 @@ An interactive prototype built for the Deerfield Director of Strategy & Product 
 
 ---
 
-## Option 1: View the Live Demo (no setup required)
-
-👉 **[Open ClearPath in your browser](https://www.perplexity.ai/computer/a/clearpath-admissions-platform-5Y2m6CNiQgO8SNgmP3OK7g)**
-
----
-
-## Option 2: Run It Locally
+## Running It Locally
 
 ### Step 1 — Install Node.js (one-time setup)
 
