@@ -16,34 +16,6 @@ npm run go
 
 This single command installs dependencies, sets up the database, builds the app, and starts the server. The app will be available at `http://localhost:5000`.
 
-## Running It Locally
-
-### Step 1 — Install Node.js (one-time setup)
-
-Check if you already have it:
-```bash
-node -v
-```
-
-If you see `v18` or higher, skip to Step 2. Otherwise, download it from **[nodejs.org](https://nodejs.org)** and install it.
-
-### Step 2 — Set up and run
-
-Open your terminal, navigate to this folder, and run these four commands:
-
-```bash
-npm install
-npx drizzle-kit push
-npm run build
-npm run start:local
-```
-
-Then open **[http://localhost:5000](http://localhost:5000)** in your browser.
-
-> **Tip:** You only need to run `npm install`, `npx drizzle-kit push`, and `npm run build` once. After that, just use `npm run start:local` to start the app.
-
----
-
 ## What's Inside
 
 | Module | What it does |
