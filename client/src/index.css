@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ClearPath — Healthcare / Clinical palette: deep navy + teal accent + warm neutrals */
+    --background: 220 20% 97%;
+    --foreground: 220 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+    --primary: 186 72% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 30% 20%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 46%;
+    --accent: 186 40% 90%;
+    --accent-foreground: 186 72% 20%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 88%;
+    --input: 220 14% 88%;
+    --ring: 186 72% 28%;
+    --radius: 0.5rem;
+
+    /* Extended semantic colors */
+    --color-success: 142 60% 35%;
+    --color-success-bg: 142 60% 94%;
+    --color-warning: 38 92% 40%;
+    --color-warning-bg: 38 92% 94%;
+    --color-error: 0 72% 51%;
+    --color-error-bg: 0 72% 95%;
+    --color-info: 211 80% 45%;
+    --color-info-bg: 211 80% 93%;
+
+    /* Navy sidebar */
+    --sidebar-bg: 220 35% 14%;
+    --sidebar-fg: 220 20% 80%;
+    --sidebar-fg-muted: 220 15% 50%;
+    --sidebar-active-bg: 186 72% 28%;
+    --sidebar-active-fg: 0 0% 100%;
+    --sidebar-hover-bg: 220 30% 20%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 220 15% 88%;
+    --card: 220 28% 11%;
+    --card-foreground: 220 15% 88%;
+    --popover: 220 28% 11%;
+    --popover-foreground: 220 15% 88%;
+    --primary: 186 60% 45%;
+    --primary-foreground: 220 30% 8%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 75%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 12% 52%;
+    --accent: 186 30% 20%;
+    --accent-foreground: 186 60% 60%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 186 60% 45%;
+
+    --color-success: 142 50% 48%;
+    --color-success-bg: 142 30% 14%;
+    --color-warning: 38 80% 55%;
+    --color-warning-bg: 38 40% 14%;
+    --color-error: 0 70% 60%;
+    --color-error-bg: 0 40% 14%;
+    --color-info: 211 70% 58%;
+    --color-info-bg: 211 40% 14%;
+
+    --sidebar-bg: 220 35% 8%;
+    --sidebar-fg: 220 15% 72%;
+    --sidebar-fg-muted: 220 12% 42%;
+    --sidebar-active-bg: 186 60% 28%;
+    --sidebar-active-fg: 0 0% 100%;
+    --sidebar-hover-bg: 220 28% 14%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 { line-height: 1.2; }
+}
+
+/* Sidebar styles */
+.sidebar {
+  background: hsl(var(--sidebar-bg));
+  color: hsl(var(--sidebar-fg));
+  width: 240px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--sidebar-fg));
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+  margin: 1px 8px;
+}
+.sidebar-nav-item:hover {
+  background: hsl(var(--sidebar-hover-bg));
+  color: hsl(var(--sidebar-fg));
+}
+.sidebar-nav-item.active {
+  background: hsl(var(--sidebar-active-bg));
+  color: hsl(var(--sidebar-active-fg));
+}
+.sidebar-nav-item .nav-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.sidebar-nav-item.active .nav-icon { opacity: 1; }
+
+.sidebar-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--sidebar-fg-muted));
+  padding: 16px 24px 6px;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.status-badge.success { background: hsl(var(--color-success-bg)); color: hsl(var(--color-success)); }
+.status-badge.warning { background: hsl(var(--color-warning-bg)); color: hsl(var(--color-warning)); }
+.status-badge.error { background: hsl(var(--color-error-bg)); color: hsl(var(--color-error)); }
+.status-badge.info { background: hsl(var(--color-info-bg)); color: hsl(var(--color-info)); }
+.status-badge.muted { background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+
+/* KPI cards */
+.kpi-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.kpi-number {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+.kpi-label {
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 4px;
+}
+
+/* Urgency indicator */
+.urgency-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.urgency-dot.urgent { background: hsl(var(--color-error)); box-shadow: 0 0 0 3px hsl(var(--color-error-bg)); }
+.urgency-dot.standard { background: hsl(var(--color-info)); }
+.urgency-dot.low { background: hsl(var(--color-success)); }
+
+/* Progress bar */
+.progress-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: hsl(var(--muted));
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 600ms ease;
+}
+
+/* Table */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid hsl(var(--border));
+}
+.data-table td {
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid hsl(var(--border));
+  vertical-align: middle;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: hsl(var(--muted)); }
+
+/* Verification progress steps */
+.ver-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.ver-step-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.ver-step-icon.done { background: hsl(var(--color-success-bg)); color: hsl(var(--color-success)); }
+.ver-step-icon.active { background: hsl(var(--primary)); color: white; }
+.ver-step-icon.pending { background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+
+/* Logo */
+.clearpath-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px 16px;
+}
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.logo-text {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: white;
+  letter-spacing: -0.01em;
+}
+.logo-sub {
+  font-size: 0.6rem;
+  color: hsl(var(--sidebar-fg-muted));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: -2px;
+}
+
+/* Funnel animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: slideIn 200ms ease forwards; }
+
+/* Insurance verification animation */
+@keyframes verifyPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.verifying { animation: verifyPulse 1.2s ease infinite; }
