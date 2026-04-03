@@ -1,6 +1,6 @@
 # ClearPath — Admissions Intelligence Platform
 
-An interactive prototype built for the Deerfield Director of Strategy & Product assessment.
+An interactive prototype built for the Strategy & Product assessment.
 
 > All patient names, center names, and data are synthetic — generated for demo purposes only.
 
