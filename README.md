@@ -8,24 +8,13 @@ An interactive prototype built for the Deerfield Director of Strategy & Product 
 
 ## Getting Started
 
-To spin up the backend locally, run:
+To run locally, clone the repo and run:
 
 ```bash
-npm run setup
+npm run go
 ```
 
-This single command will:
-1. Install all dependencies
-2. Create and migrate the database
-3. Build the production bundle
-
-Then start the server:
-
-```bash
-NODE_ENV=production node dist/index.cjs
-```
-
-The app will be available at `http://localhost:5000`.
+This single command installs dependencies, sets up the database, builds the app, and starts the server. The app will be available at `http://localhost:5000`.
 
 ## Running It Locally
 
