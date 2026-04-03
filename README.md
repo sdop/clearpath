@@ -8,13 +8,24 @@ An interactive prototype built for the Deerfield Director of Strategy & Product 
 
 ## Getting Started
 
-To run locally, clone the repo and run:
+### Step 1 — Install Node.js (one-time)
+
+Check if you already have it:
+```bash
+node -v
+```
+
+If you see `v18` or higher, you're good. Otherwise, download it from **[nodejs.org](https://nodejs.org)** and install it.
+
+### Step 2 — Run the app
+
+Clone the repo and run:
 
 ```bash
 npm run go
 ```
 
-This single command installs dependencies, sets up the database, builds the app, and starts the server. The app will be available at `http://localhost:5000`.
+This single command installs dependencies, sets up the database, builds the app, and starts the server. The app will be available at **[http://localhost:5000](http://localhost:5000)**.
 
 ## What's Inside
 
