@@ -151,8 +151,8 @@ export default function Dashboard() {
         {[
           { path: "/insurance", label: "Module 1", name: "Insurance Verify", desc: "Real-time eligibility checks", color: "#0891b2" },
           { path: "/reengagement", label: "Module 2 & 3", name: "Re-engagement", desc: "Automated lead follow-up", color: "#7c3aed" },
-          { path: "/referrals", label: "Module 5", name: "Referral Portal", desc: "BDO digital intake", color: "#b45309" },
           { path: "/virtual", label: "Module 4", name: "Hybrid Care", desc: "Virtual care gateway", color: "#047857" },
+          { path: "/referrals", label: "Module 5", name: "Referral Portal", desc: "BDO digital intake", color: "#b45309" },
           { path: "/centers", label: "Network", name: "Center View", desc: "Bed availability & capacity", color: "#1e40af" },
         ].map(m => (
           <Link key={m.path} href={m.path}>
