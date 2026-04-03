@@ -75,7 +75,7 @@ export default function VirtualCare() {
     steps.forEach((_, i) => {
       setTimeout(() => setSimulationStep(i + 1), i * 900);
     });
-    setTimeout(() => setSimulationStep(null), steps.length * 900 + 400);
+    setTimeout(() => setSimulationStep(null), steps.length * 900 + 10000);
   };
 
   const SIM_STEPS = [
