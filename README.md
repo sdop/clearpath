@@ -6,6 +6,10 @@ An interactive prototype built for the Product & Strategy assessment.
 
 ---
 
+## Case Study
+
+The full case study document is located in the [`/docs`](./docs) folder.
+
 ## Getting Started
 
 ### Step 1 — Install Node.js (one-time)
