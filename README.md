@@ -1,6 +1,6 @@
 # ClearPath — Admissions Intelligence Platform
 
-An interactive prototype built for the Strategy & Product assessment.
+An interactive prototype built for the Product & Strategy assessment.
 
 > All patient names, center names, and data are synthetic — generated for demo purposes only.
 
